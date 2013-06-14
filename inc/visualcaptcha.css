@@ -1,0 +1,128 @@
+/**
+ * visualCaptchaHTML class by emotionLoop - 2013.03.28
+ *
+ * This file handles the CSS for the main wCaptcha class.
+ *
+ * This license applies to this file and others without reference to any other license.
+ *
+ * @author emotionLoop | http://emotionloop.com
+ * @link http://visualcaptcha.net
+ * @package visualCaptcha
+ * @license GNU GPL v3
+ * @version 4.0.3
+ */
+div.eL-captcha.type-1 {
+	margin: 10px 0 10px 10px;
+	padding: 0;
+	display: block;
+	width: 200px;
+}
+div.eL-captcha > div.eL-possibilities.type-1 {
+	margin: 0;
+	padding: 14px 0 0 0;
+	display: block;
+	width: 100px;
+	float: left;
+	height: 46px;
+}
+div.eL-captcha > div.eL-possibilities.type-1 > img {
+	padding: 0 4px 4px 4px !important;
+}
+div.eL-captcha > div.eL-where2go.type-1 {
+	margin: 0 !important;
+}
+
+div.eL-captcha.type-0 {
+	margin: 0 0 10px 0;
+	padding: 0;
+	display: block;
+	width: 320px;
+}
+div.eL-captcha > div.eL-possibilities.type-0 {
+	margin: 0;
+	padding: 34px 0 0 0;
+	display: block;
+	width: 200px;
+	float: left;
+	height: 66px;
+}
+
+div.eL-captcha > div.eL-possibilities > img {
+	width: 32px;
+	height: 32px;
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0 4px;
+	z-index: 5;
+}
+div.eL-captcha > div.eL-where2go {
+	margin: 0 0 0 20px;
+	padding: 0;
+	display: block;
+	width: 100px;
+	background: transparent url('../images/visualcaptcha/dropzone.png') center center no-repeat;
+	float: left;
+	height: 100px;
+}
+div.eL-captcha > div.eL-where2go.retina {
+	background-image: url('../images/visualcaptcha/dropzone@2x.png');
+	background-size: 90px 90px;
+}
+div.eL-captcha > p.eL-accessibility {
+	font-size: 10px;
+	text-align: right;
+	display: block;
+	float: right;
+	clear: both;
+}
+div.eL-captcha > p.eL-accessibility img {
+	width: 16px;
+	height: 16px;
+}
+div.eL-captcha > div.eL-accessibility {
+	font-size: 12px;
+	text-align: left;
+	display: none;
+	clear: left;
+	float: left;
+	margin-bottom: 10px;
+	width: 300px;
+	overflow: auto;
+}
+div.eL-captcha > div.eL-accessibility.type-1 {
+	width: 180px;
+}
+div.eL-captcha > div.eL-accessibility > p {
+	width: 100%;
+}
+div.eL-captcha > div.eL-accessibility > input {
+	display: block;
+	padding: 5px;
+	width: 90%;
+	margin: 10px 0;
+	font-size: 1em;
+	border: 1px solid #CCC;
+	color: #333;
+}
+div.eL-captcha > div.eL-accessibility > audio {
+	visibility: hidden;
+	clear: both;
+}
+
+div.eL-captcha .clearfix,
+div.eL-captcha.clearfix {
+	zoom: 1;
+}
+div.eL-captcha .clearfix:before,
+div.eL-captcha .clearfix:after,
+div.eL-captcha.clearfix:before,
+div.eL-captcha.clearfix:after {
+	display: table;
+	line-height: 0;
+	content: "";
+}
+div.eL-captcha .clearfix:after,
+div.eL-captcha.clearfix:after {
+	clear: both;
+}
