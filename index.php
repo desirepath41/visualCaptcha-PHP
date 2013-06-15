@@ -40,7 +40,7 @@ if (isset($_REQUEST['css_type']) && $_REQUEST['css_type'] == '1') {
 </head>
 <body>
 	<div id="logo">
-		<a href="http://visualcaptcha.net" target="_blank"><img src="http://visualcaptcha.net/img/logo.png" alt="visualCaptcha by emotionLoop"></a>
+		<a href="http://visualcaptcha.net" target="_blank"><img src="http://visualcaptcha.net/img/logo-white.png" alt="visualCaptcha"></a>
 	</div>
 	<div id="wrapper" class="type-<?php echo $_FORM_TYPE; ?>">
 		<div id="content">
