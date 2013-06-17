@@ -1,6 +1,6 @@
 <?php
 /**
- * visualCaptchaHTML class by emotionLoop - 2013.03.28
+ * visualCaptchaHTML class by emotionLoop - 2013.06.17
  *
  * This class handles a visual image captcha system.
  *
@@ -10,7 +10,7 @@
  * @link http://visualcaptcha.net
  * @package visualCaptcha
  * @license GNU GPL v3
- * @version 4.0.3
+ * @version 4.0.4
  */
 namespace visualCaptcha;
 

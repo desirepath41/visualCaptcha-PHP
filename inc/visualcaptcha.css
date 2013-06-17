@@ -1,5 +1,5 @@
 /**
- * visualCaptchaHTML class by emotionLoop - 2013.03.28
+ * visualCaptchaHTML class by emotionLoop - 2013.06.17
  *
  * This file handles the CSS for the main wCaptcha class.
  *
@@ -9,13 +9,19 @@
  * @link http://visualcaptcha.net
  * @package visualCaptcha
  * @license GNU GPL v3
- * @version 4.0.3
+ * @version 4.0.4
  */
 div.eL-captcha.type-1 {
 	margin: 10px 0 10px 10px;
 	padding: 0;
 	display: block;
 	width: 200px;
+}
+div.eL-captcha > p.eL-explanation > span.desktopText {
+	display: block;
+}
+div.eL-captcha > p.eL-explanation > span.mobileText {
+	display: none;
 }
 div.eL-captcha > div.eL-possibilities.type-1 {
 	margin: 0;
