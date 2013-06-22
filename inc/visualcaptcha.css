@@ -1,5 +1,5 @@
 /**
- * visualCaptchaHTML class by emotionLoop - 2013.06.17
+ * visualCaptchaHTML class by emotionLoop - 2013.06.22
  *
  * This file handles the CSS for the main wCaptcha class.
  *
@@ -9,7 +9,7 @@
  * @link http://visualcaptcha.net
  * @package visualCaptcha
  * @license GNU GPL v3
- * @version 4.0.4
+ * @version 4.1.0
  */
 div.eL-captcha.type-1 {
 	margin: 10px 0 10px 10px;
@@ -63,17 +63,44 @@ div.eL-captcha > div.eL-possibilities > img {
 	z-index: 5;
 }
 div.eL-captcha > div.eL-where2go {
-	margin: 0 0 0 20px;
+	margin: 8px 0 0 20px;
 	padding: 0;
 	display: block;
-	width: 100px;
-	background: transparent url('../images/visualcaptcha/dropzone.png') center center no-repeat;
+	width: 90px;
 	float: left;
-	height: 100px;
+	height: 90px;
+
+	background: #0d6797; /* Old browsers */
+	background: -moz-linear-gradient(-45deg, #0d6797 0%, #169799 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#0d6797), color-stop(100%,#169799)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg, #0d6797 0%,#169799 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg, #0d6797 0%,#169799 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg, #0d6797 0%,#169799 100%); /* IE10+ */
+	background: linear-gradient(135deg, #0d6797 0%,#169799 100%); /* W3C */
+
+	box-shadow: inset 1px 1px 5px rgba( 0, 0, 0, 0.7 );
+
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	-o-border-radius: 50px;
+	-ms-border-radius: 50px;
+	border-radius: 50px;
 }
-div.eL-captcha > div.eL-where2go.retina {
-	background-image: url('../images/visualcaptcha/dropzone@2x.png');
+div.eL-captcha > div.eL-where2go.img {
+	background: transparent url('../images/visualcaptcha/dropzone.png') center center no-repeat;
+}
+div.eL-captcha > div.eL-where2go.img.retina {
+	background: transparent url('../images/visualcaptcha/dropzone@2x.png') center center no-repeat;
 	background-size: 90px 90px;
+}
+div.eL-captcha > div.eL-where2go > p {
+	padding-top: 14px;
+	font-size: 18px !important;
+	font-weight: 200;
+	color: #FFF;
+	text-align: center;
+
+	text-shadow: 1px 1px 2px rgba( 0, 0, 0, 0.7 );
 }
 div.eL-captcha > p.eL-accessibility {
 	font-size: 10px;

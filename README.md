@@ -4,11 +4,11 @@ This is the PHP version of visualCaptcha.
 
 ## Current Version
 
-Current version is 4.0.4.
+Current version is 4.1.0.
 
 ## Requirements
 
-For the script to work, PHP (5.3+ tested), jQuery (1.8+ tested), and jQuery UI (1.9+ tested) are required.
+For the script to work, PHP (5.3+ tested), jQuery (1.8-1.10 tested), and jQuery UI (1.9-1.10 tested) are required.
 
 **Note:** PHP < 5.3 is not supported (you can remove the namespaces and it should still work, but we're not supporting that).
 

@@ -3,22 +3,21 @@ session_start();
 
 $_GLOBAL_MSG = '';
 
-if (isset($_POST['form_submit']) && $_POST['form_submit'] == '1') {
-	if (!validCaptcha('frm_sample')) {
+if ( isset($_POST['form_submit']) && $_POST['form_submit'] === '1' ) {
+	if ( ! validCaptcha('frm_sample') ) {
 		$_GLOBAL_MSG = 'Captcha error!';
 	} else {
 		$_GLOBAL_MSG = 'Captcha valid!';
 	}
 }
 
-if (isset($_REQUEST['css_type']) && $_REQUEST['css_type'] == '1') {
-	$_FORM_TYPE = 1;//-- Vertical
+if ( isset($_REQUEST['css_type']) && $_REQUEST['css_type'] === '1' ) {
+	$_FORM_TYPE = 1;// Vertical
 } else {
-	$_FORM_TYPE = 0;//-- Horizontal
+	$_FORM_TYPE = 0;// Horizontal
 }
 
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -33,8 +32,8 @@ if (isset($_REQUEST['css_type']) && $_REQUEST['css_type'] == '1') {
 
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+	<!-- Required CSS -->
+	<link rel="stylesheet" href="inc/visualcaptcha.css" media="all" />
 	
 	<link rel="stylesheet" href="sample.css" media="all" />
 </head>
@@ -45,7 +44,7 @@ if (isset($_REQUEST['css_type']) && $_REQUEST['css_type'] == '1') {
 	<div id="wrapper" class="type-<?php echo $_FORM_TYPE; ?>">
 		<div id="content">
 <?php
-			if (!empty($_GLOBAL_MSG)) {
+			if ( ! empty($_GLOBAL_MSG) ) {
 ?>
 			<h3><?php echo $_GLOBAL_MSG; ?></h3>
 <?php
@@ -56,32 +55,35 @@ if (isset($_REQUEST['css_type']) && $_REQUEST['css_type'] == '1') {
 				<input type="hidden" name="form_submit" value="1" readonly="readonly" />
 				<input type="hidden" name="css_type" value="<?php echo $_FORM_TYPE; ?>" readonly="readonly" />
 				<p><label for="name">Name:</label> <input type="text" name="name" id="name" value="" size="30" /></p>
-				<?php printCaptcha('frm_sample',$_FORM_TYPE); ?>
+				<?php printCaptcha( 'frm_sample', $_FORM_TYPE ); ?>
 				<p class="submit"><button type="submit" name="submit-bt">Submit form</button></p>
 				<p><small>CSS types: <a href="?css_type=0">Horizontal (default)</a> | <a href="?css_type=1">Vertical</a></small></p>
 			</form>
 		</div>
 		<div id="footer">
-			<p><a href="http://visualcaptcha.net/" target="_blank">visualCaptcha</a> by <a href="http://emotionloop.com/" target="_blank">emotionLoop</a><br />You can get it at <a href="http://www.binpress.com/app/wcaptcha/467?ad=1615" rel="external" target="_blank">Binpress</a></p>
+			<p><a href="http://visualcaptcha.net/" target="_blank">visualCaptcha</a> by <a href="http://emotionloop.com/" target="_blank">emotionLoop</a><br />You can get it at <a href="https://github.com/emotionLoop/visualCaptcha" target="_blank">GitHub</a></p>
 		</div>
 	</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script src="inc/visualcaptcha.js"></script>
 </body>
 </html>
 <?php
 
-//-- These functions aren't needed, but we recommend you to use them (or similar), so you can start/get multiple captcha instances with two simple functions.
+// These functions aren't needed, but we recommend you to use them (or similar), so you can start/get multiple captcha instances with two simple functions.
 
-function printCaptcha($formId = NULL, $type = NULL, $fieldName = NULL, $accessibilityFieldName = NULL) {
-	require_once('inc/visualcaptcha.class.php');
+function printCaptcha( $formId = NULL, $type = NULL, $fieldName = NULL, $accessibilityFieldName = NULL ) {
+	require_once( 'inc/visualcaptcha.class.php' );
 	
-	$visualCaptcha = new \visualCaptcha\captcha($formId,$type,$fieldName,$accessibilityFieldName);
+	$visualCaptcha = new \visualCaptcha\Captcha( $formId, $type, $fieldName, $accessibilityFieldName );
 	$visualCaptcha->show();
 }
 
-function validCaptcha($formId = NULL, $type = NULL, $fieldName = NULL, $accessibilityFieldName = NULL) {
-	require_once('inc/visualcaptcha.class.php');
+function validCaptcha( $formId = NULL, $type = NULL, $fieldName = NULL, $accessibilityFieldName = NULL ) {
+	require_once( 'inc/visualcaptcha.class.php' );
 	
-	$visualCaptcha = new \visualCaptcha\captcha($formId,$type,$fieldName,$accessibilityFieldName);
+	$visualCaptcha = new \visualCaptcha\Captcha( $formId, $type, $fieldName, $accessibilityFieldName );
 	return $visualCaptcha->isValid();
 }
 

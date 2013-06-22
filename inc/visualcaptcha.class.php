@@ -1,6 +1,6 @@
 <?php
 /**
- * visualCaptchaHTML class by emotionLoop - 2013.06.17
+ * visualCaptcha Captcha class by emotionLoop - 2013.06.22
  *
  * This class handles a visual image captcha system.
  *
@@ -10,17 +10,15 @@
  * @link http://visualcaptcha.net
  * @package visualCaptcha
  * @license GNU GPL v3
- * @version 4.0.4
+ * @version 4.1.0
  */
 namespace visualCaptcha;
 
-class captcha {
+class Captcha {
 	private $formId = 'frm_captcha';
 	private $type = 0;
 	private $fieldName = 'captcha-value';
 	private $accessibilityFieldName = 'captcha-accessibility-value';
-	private $js = '';
-	private $css = '';
 	private $html = '';
 	private $hash = '';
 	private $hashSalt = '';
@@ -32,11 +30,10 @@ class captcha {
 	private $accessibilityAnswer = '';
 	private $value = '';
 	private $valueProperties = array();
-	private $jsFile = 'inc/visualcaptcha.js';
-	private $cssFile = 'inc/visualcaptcha.css';
 	private $htmlClass = 'inc/visualcaptcha.class.html.php';
 	public static $imagesPath = 'images/visualcaptcha/';
 	public static $audiosPath = 'audio/visualcaptcha/';
+	public static $imageFile = 'image.php';
 	public static $audioFile = 'audio.php';
 
 	public function __construct( $formId = NULL, $type = NULL, $fieldName = NULL, $accessibilityFieldName = NULL ) {
@@ -127,22 +124,22 @@ class captcha {
 	public function show() {
 		$this->setNewValue();
 		
-		shuffle($this->options);
-		
-		// Include visualCaptchaHTML class
+		// Include visualCaptcha HTML class
 		require_once( $this->htmlClass );
 
-		$this->html = \visualCaptcha\html::get( $this->type, $this->fieldName, $this->accessibilityFieldName, $this->formId, $this->getText(), $this->options, $this->optionsProperties, $this->jsFile, $this->cssFile );
+		$this->html = HTML::get( $this->type, $this->fieldName, $this->accessibilityFieldName, $this->formId, $this->getText(), $this->options );
 
 		echo $this->html;
 	}
 	
 	public function isValid() {
-		if ( isset($_POST[$this->fieldName]) && isset($_SESSION[$this->hash]) && ($_POST[$this->fieldName] == $_SESSION[$this->hash]) ) {
+		// "Normal" option
+		if ( isset($_POST[$this->fieldName]) && isset($_SESSION[$this->hash]) && ($_POST[$this->fieldName] === $_SESSION[$this->hash]) ) {
 			return true;
 		}
+
 		// Accessibility option
-		if ( isset($_POST[$this->accessibilityFieldName]) && isset($_SESSION[$this->hash.'::accessibility']) && ($this->encrypt( mb_strtolower($_POST[$this->accessibilityFieldName]) ) == $_SESSION[$this->hash.'::accessibility']) ) {
+		if ( isset($_POST[$this->accessibilityFieldName]) && isset($_SESSION[$this->hash.'::accessibility']) && ($this->encrypt( mb_strtolower($_POST[$this->accessibilityFieldName]) ) === $_SESSION[$this->hash.'::accessibility']) ) {
 			return true;
 		}
 		return false;
@@ -152,7 +149,7 @@ class captcha {
 		$this->answers = $this->shuffle( $this->answers );
 
 		$i = 0;
-		switch ($this->type) {
+		switch ( $this->type ) {
 			case 0:// Horizontal
 				$limit = 5;
 			break;
@@ -161,7 +158,8 @@ class captcha {
 			break;
 		}
 		
-		$rnd = rand(0, $limit-1);
+		// Define the index that will have the right answer
+		$rnd = rand( 0, $limit - 1 );
 		
 		foreach ( $this->answers as $answer => $answerProps ) {
 			if ( $i >= $limit ) {
@@ -171,15 +169,24 @@ class captcha {
 			$encryptedAnswer = $this->encrypt( $answer );
 
 			$this->options[] = $encryptedAnswer;
-			$this->optionsProperties[$encryptedAnswer] = $answerProps;
-			if ( $i == $rnd ) {
-				$_SESSION[$this->hash] = $encryptedAnswer;
+			$this->optionsProperties[ $encryptedAnswer ] = $answerProps;
+
+			// Record this option as the answer
+			if ( $i === $rnd ) {
+				$_SESSION[ $this->hash ] = $encryptedAnswer;
 				$this->value = $encryptedAnswer;
 				$this->valueProperties = $answerProps;
-				
 			}
+
 			++$i;
 		}
+
+		// Mess with the ordering
+		shuffle( $this->options );
+
+		// Store the options in the session
+		$_SESSION[ $this->hash . '::options' ] = $this->options;
+		$_SESSION[ $this->hash . '::optionsProperties' ] = $this->optionsProperties;
 
 		// Accessibility option. Set question file and answer, encrypted
 		$this->accessibilityOptions = $this->shuffle( $this->accessibilityOptions );
@@ -188,11 +195,11 @@ class captcha {
 
 		$rnd = rand(0, $limit-1);
 
-		$this->accessibilityAnswer = $this->encrypt( $this->accessibilityOptions[$rnd][0] );
-		$this->accessibilityFile = $this->accessibilityOptions[$rnd][1];
+		$this->accessibilityAnswer = $this->encrypt( $this->accessibilityOptions[ $rnd ][ 0 ] );
+		$this->accessibilityFile = $this->accessibilityOptions[ $rnd ][ 1 ];
 
-		$_SESSION[$this->hash.'::accessibility'] = $this->accessibilityAnswer;
-		$_SESSION[$this->hash.'::accessibilityFile'] = $this->accessibilityFile;
+		$_SESSION[ $this->hash . '::accessibility' ] = $this->accessibilityAnswer;
+		$_SESSION[ $this->hash . '::accessibilityFile' ] = $this->accessibilityFile;
 	}
 	
 	private function getValue() {
@@ -200,11 +207,11 @@ class captcha {
 	}
 	
 	private function getImage() {
-		return $this->valueProperties[0];
+		return $this->valueProperties[ 0 ];
 	}
 	
 	private function getText() {
-		return $this->valueProperties[1];
+		return $this->valueProperties[ 1 ];
 	}
 	
 	/**
@@ -234,8 +241,8 @@ class captcha {
 		shuffle( $keys );
 		$random = array();
 		
-		foreach ($keys as $key) {
-			$random[$key] = $list[$key];
+		foreach ( $keys as $key ) {
+			$random[ $key ] = $list[ $key ];
 		}
 		
 		return $random;
@@ -255,9 +262,32 @@ class captcha {
 
 	/**
 	 * Public getAudioFilePath method. Returns the current audio file path in the session, if set
+	 *
+	 * @since 4.0
+	 * @return String with the path to the current acessibility audio file
 	 */
 	public function getAudioFilePath() {
-		return $_SESSION[$this->hash.'::accessibilityFile'];
+		return $_SESSION[ $this->hash . '::accessibilityFile' ];
+	}
+
+	/**
+	 * Public getImageFilePath method. Returns the image file path in the session, for the given index
+	 *
+	 * @since 4.1
+	 * @param $i Integer index number
+	 * @param $getRetina Boolean should the images be @2x or not. Defaults to false
+	 * @return String with the path to the current image file according to the index
+	 */
+	public function getImageFilePath( $i, $getRetina = false ) {
+		$imageEncryptedValue = $_SESSION[ $this->hash . '::options' ][ $i ];
+		$imagePath = $_SESSION[ $this->hash . '::optionsProperties' ][ $imageEncryptedValue ][ 0 ];
+
+		if ( ! $getRetina ) {
+			return $imagePath;
+		} else {
+			$retinaPath = str_replace( '.png', '@2x.png', $imagePath );
+			return $retinaPath;
+		}
 	}
 }
 ?>
