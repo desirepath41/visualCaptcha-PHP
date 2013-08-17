@@ -30,7 +30,7 @@ You can view visualCaptcha's demo at http://demo.visualcaptcha.net
 
 ## Breaking visualCaptcha
 
-In August 14th 2013, a user posted code that was breaking visualCaptcha at https://gist.github.com/ipeychev/6234050. We improved it at https://gist.github.com/BrunoBernardino/6244324 (so that multiple attempts could be made at the same time, and to get more information), having a successful breaking rate of < 5-7%.
+In August 14th 2013, a user posted code that was breaking visualCaptcha at https://gist.github.com/ipeychev/6234050. We improved it at https://gist.github.com/BrunoBernardino/6244324 (so that multiple attempts could be made at the same time, and to get more information), having a successful breaking rate of 5-7%.
 
 The code's idea is that, because the hashes for the images are visible and don't change for 24h for the same ip, the hashes could be sniffed and multiple attempts made to eventually break visualCaptcha.
 

@@ -4,9 +4,9 @@ session_start();
 $_GLOBAL_MSG = '';
 
 if ( isset($_REQUEST['css_type']) && $_REQUEST['css_type'] === '1' ) {
-    $_FORM_TYPE = 1;// Vertical
+	$_FORM_TYPE = 1;// Vertical
 } else {
-    $_FORM_TYPE = 0;// Horizontal
+	$_FORM_TYPE = 0;// Horizontal
 }
 
 // The fact we're not using the default visualCaptcha's fieldname is just to show part of visualCaptcha's flexibility
@@ -19,8 +19,8 @@ if ( isset($_POST['form_submit']) && $_POST['form_submit'] === '1' ) {
 		$_GLOBAL_MSG = 'Captcha valid!';
 	}
 
-    // Generate a new fieldName
-    $_FIELD_NAME = uniqid();
+	// Generate a new fieldName
+	$_FIELD_NAME = uniqid();
 }
 
 $_SESSION['visualCaptcha-fieldName'] = $_FIELD_NAME;
