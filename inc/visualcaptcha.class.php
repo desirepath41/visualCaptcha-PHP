@@ -1,6 +1,6 @@
 <?php
 /**
- * visualCaptcha Captcha class by emotionLoop - 2013.06.22
+ * visualCaptcha Captcha class by emotionLoop - 2013.08.17
  *
  * This class handles a visual image captcha system.
  *
@@ -10,7 +10,7 @@
  * @link http://visualcaptcha.net
  * @package visualCaptcha
  * @license GNU GPL v3
- * @version 4.1.0
+ * @version 4.2.0
  */
 namespace visualCaptcha;
 
@@ -148,6 +148,9 @@ class Captcha {
 	private function setNewValue() {
 		$this->answers = $this->shuffle( $this->answers );
 
+		// Generate and Store a new session "id"
+		$_SESSION[ $this->hash . '::requestSession' ] = sha1( $this->hash . '::' . microtime() );
+
 		$i = 0;
 		switch ( $this->type ) {
 			case 0:// Horizontal
@@ -256,7 +259,7 @@ class Captcha {
 	 * @return $encryptedString String encrypted
 	 */
 	private function encrypt( $string ) {
-		$encryptedString = sha1( $this->hashSalt . $this->nonceTick(1800) . '::encrypt::' . $string );
+		$encryptedString = sha1( $this->hashSalt . $this->nonceTick(1800) . '::encrypt::' . $string . '::' . $this->getRequestSession() );
 		return $encryptedString;
 	}
 
@@ -288,6 +291,16 @@ class Captcha {
 			$retinaPath = str_replace( '.png', '@2x.png', $imagePath );
 			return $retinaPath;
 		}
+	}
+
+	/**
+	 * Private getRequestSession method. Returns the current request's session, if set
+	 *
+	 * @since 4.2
+	 * @return String with the value for the current session
+	 */
+	private function getRequestSession() {
+		return $_SESSION[ $this->hash . '::requestSession' ];
 	}
 }
 ?>

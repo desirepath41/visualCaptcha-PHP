@@ -1,5 +1,5 @@
 /**
- * visualCaptcha JS file by emotionLoop - 2013.06.22
+ * visualCaptcha JS file by emotionLoop - 2013.08.17
  *
  * This file handles the JS for the visualCaptcha plugin.
  *
@@ -9,7 +9,7 @@
  * @link http://visualcaptcha.net
  * @package visualCaptcha
  * @license GNU GPL v3
- * @version 4.1.0
+ * @version 4.2.0
  */
 (function( $ ) {
 	"use strict";

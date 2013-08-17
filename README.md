@@ -4,7 +4,7 @@ This is the PHP version of visualCaptcha.
 
 ## Current Version
 
-Current version is 4.1.0.
+Current version is 4.2.0.
 
 ## Requirements
 
@@ -27,6 +27,14 @@ The sample is in English (for distribution reasons), but the strings, images, an
 ## Demo
 
 You can view visualCaptcha's demo at http://demo.visualcaptcha.net
+
+## Breaking visualCaptcha
+
+In August 14th 2013, a user posted code that was breaking visualCaptcha at https://gist.github.com/ipeychev/6234050. We improved it at https://gist.github.com/BrunoBernardino/6244324 (so that multiple attempts could be made at the same time, and to get more information), having a successful breaking rate of < 5-7%.
+
+The code's idea is that, because the hashes for the images are visible and don't change for 24h for the same ip, the hashes could be sniffed and multiple attempts made to eventually break visualCaptcha.
+
+Since version 4.2.0, the hashes now vary every time you make a new request, and the successful breaking rate diminished to < 5% (the successful attempts would be for whenever the first option would be the correct one). However, to demonstrate how visualCaptcha's customization is also a powerful part of its security features, the demo now changes the captcha input name, bringing the **successful break rate to 0.00%**. This proves that a bot/script would have to be constantly updated and customized for each site, and still have a very low break rate.
 
 ## More information
 

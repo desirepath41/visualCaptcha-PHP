@@ -1,6 +1,6 @@
 <?php
 /**
- * visualCaptcha Image file by emotionLoop - 2013.06.22
+ * visualCaptcha Image file by emotionLoop - 2013.08.17
  *
  * This file will get the proper session image file and return it, so that it's not possible to know through the front-end code the image file name or even which image file it is.
  *
@@ -10,7 +10,7 @@
  * @link http://visualcaptcha.net
  * @package visualCaptcha
  * @license GNU GPL v3
- * @version 4.1.0
+ * @version 4.2.0
  */
 namespace visualCaptcha;
 

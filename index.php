@@ -3,19 +3,27 @@ session_start();
 
 $_GLOBAL_MSG = '';
 
+if ( isset($_REQUEST['css_type']) && $_REQUEST['css_type'] === '1' ) {
+    $_FORM_TYPE = 1;// Vertical
+} else {
+    $_FORM_TYPE = 0;// Horizontal
+}
+
+// The fact we're not using the default visualCaptcha's fieldname is just to show part of visualCaptcha's flexibility
+$_FIELD_NAME = isset($_SESSION['visualCaptcha-fieldName']) ? $_SESSION['visualCaptcha-fieldName'] : uniqid();
+
 if ( isset($_POST['form_submit']) && $_POST['form_submit'] === '1' ) {
-	if ( ! validCaptcha('frm_sample') ) {
+	if ( ! validCaptcha('frm_sample', $_FORM_TYPE, $_FIELD_NAME) ) {
 		$_GLOBAL_MSG = 'Captcha error!';
 	} else {
 		$_GLOBAL_MSG = 'Captcha valid!';
 	}
+
+    // Generate a new fieldName
+    $_FIELD_NAME = uniqid();
 }
 
-if ( isset($_REQUEST['css_type']) && $_REQUEST['css_type'] === '1' ) {
-	$_FORM_TYPE = 1;// Vertical
-} else {
-	$_FORM_TYPE = 0;// Horizontal
-}
+$_SESSION['visualCaptcha-fieldName'] = $_FIELD_NAME;
 
 ?><!DOCTYPE html>
 <html>
@@ -55,7 +63,7 @@ if ( isset($_REQUEST['css_type']) && $_REQUEST['css_type'] === '1' ) {
 				<input type="hidden" name="form_submit" value="1" readonly="readonly" />
 				<input type="hidden" name="css_type" value="<?php echo $_FORM_TYPE; ?>" readonly="readonly" />
 				<p><label for="name">Name:</label> <input type="text" name="name" id="name" value="" size="30" /></p>
-				<?php printCaptcha( 'frm_sample', $_FORM_TYPE ); ?>
+				<?php printCaptcha( 'frm_sample', $_FORM_TYPE, $_FIELD_NAME ); ?>
 				<p class="submit"><button type="submit" name="submit-bt">Submit form</button></p>
 				<p><small>CSS types: <a href="?css_type=0">Horizontal (default)</a> | <a href="?css_type=1">Vertical</a></small></p>
 			</form>

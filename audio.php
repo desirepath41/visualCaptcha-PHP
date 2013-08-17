@@ -1,6 +1,6 @@
 <?php
 /**
- * visualCaptcha Audio file by emotionLoop - 2013.06.22
+ * visualCaptcha Audio file by emotionLoop - 2013.08.17
  *
  * This file will get the proper session audio file and play it, so that it's not possible to know through the front-end code the audio file name or even which audio file it is.
  *
@@ -10,7 +10,7 @@
  * @link http://visualcaptcha.net
  * @package visualCaptcha
  * @license GNU GPL v3
- * @version 4.1.0
+ * @version 4.2.0
  */
 namespace visualCaptcha;
 
