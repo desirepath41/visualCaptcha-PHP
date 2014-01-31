@@ -10,7 +10,7 @@ You need PHP 5.3+ installed with [composer](https://getcomposer.org/doc/00-intro
 ```
 php composer.phar install
 ```
-or next one for globally installed composer
+Or next one for globally installed composer:
 ```
 composer install
 ```
