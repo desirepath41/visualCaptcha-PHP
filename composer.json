@@ -1,6 +1,6 @@
 {
     "private": true,
-    "version": "0.0.0-ignore",
+    "version": "0.0.1",
     "name": "emotionLoop/visualCaptcha-php-demo",
     "description": "visualCaptcha PHP Demo",
     "keywords": ["captcha", "visualCaptcha", "security", "api", "demo"],
