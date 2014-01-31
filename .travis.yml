@@ -12,4 +12,4 @@ env:
 before_script:
   - composer install
 after_success:
-    "curl --data 'deploy={\"repository\":\"$REPOSITORY\",\"branch\":\"$TRAVIS_BRANCH\"}' http://githooks.emotionloop.com/?k=$AUTH_KEY"
+    "curl --data 'deploy={\"repository\":\"'$REPOSITORY'\",\"branch\":\"'$TRAVIS_BRANCH'\"}' http://githooks.emotionloop.com/?k=$AUTH_KEY"
