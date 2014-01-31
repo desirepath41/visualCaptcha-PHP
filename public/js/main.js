@@ -1,10 +1,11 @@
-( function( $ ) {
+( function( window, $ ) {
     $( function() {
         $( '.captcha' ).visualCaptcha( {
             imgPath: '/img/',
             captcha: {
-              numberOfImages: 5
+                url: window.location.protocol.origin,
+                numberOfImages: 5
             }
         } );
     } );
-}( jQuery ) );
+}( window, jQuery ) );
