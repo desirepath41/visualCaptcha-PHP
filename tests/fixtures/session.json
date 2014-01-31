@@ -1,0 +1,34 @@
+{
+    "visualcaptcha": {
+        "frontendData": {
+            "audioFieldName": "4dd04c4fb2e438bc435e",
+            "imageFieldName": "807c70d9d18d795d33cd",
+            "imageName": "Truck",
+            "values": [
+                "7cfb43d66e48d8675573",
+                "12647f15263e9fb1dfc1"
+            ]
+        },
+        "images": [
+            {
+                "name": "Truck",
+                "path": "truck.png",
+                "value": "7cfb43d66e48d8675573"
+            },
+            {
+                "name": "Man",
+                "path": "man.png",
+                "value": "12647f15263e9fb1dfc1"
+            }
+        ],
+        "validAudioOption": {
+            "path": "divide4by2.mp3",
+            "value": "2"
+        },
+        "validImageOption": {
+            "name": "Truck",
+            "path": "truck.png",
+            "value": "7cfb43d66e48d8675573"
+        }
+    }
+}
