@@ -8,17 +8,7 @@
 
         <script src="/js/jquery.min.js"></script>
         <script src="/js/visualcaptcha.jquery.js"></script>
-
-        <script type="text/javascript">
-            $( function() {
-                $( '.captcha' ).visualCaptcha( {
-                    imgPath: '/img/',
-                    captcha: {
-                      numberOfImages: 5
-                    }
-                } );
-            } );
-        </script>
+        <script src="/js/main.js"></script>
     </head>
     <body>
         <div class="container">
