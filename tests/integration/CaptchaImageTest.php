@@ -38,7 +38,7 @@ class CaptchaImageTest extends Slim_Framework_TestCase {
         // Populate the session
         $_SESSION = json_decode( file_get_contents( __DIR__ . '/../fixtures/session.json' ), true );
 
-        $this->get( '/image/0', [ 'QUERY_STRING' => 'retina=1' ] );
+        $this->get( '/image/0', array( 'QUERY_STRING' => 'retina=1' ) );
         $this->assertEquals( 200, $this->response->status() );
         $this->assertEquals( 'image/png', $this->response[ 'Content-Type' ] );
     }
