@@ -9,5 +9,7 @@ env:
   global:
     - "REPOSITORY=visualcaptcha-php"
   secure: "KRBDUp2mqR7y12nSUzxaExownlISzSR0O5F1AjckB+G2Yfvox0lbZMBaYKqp/YasuHM8LE7Fcm9HsnUDzZcSYI5GSfMMMCF4QdqbiQ0Y4UVpKAtNhU8BDZltmScommvjK11F9HaGck3+QodJNGoDj+lNDmhgFRHHtt5OY8QFDKU="
+before_script:
+  - composer install
 after_success:
   - "curl --insecure --data 'deploy={\"repository\":\"$REPOSITORY\",\"branch\":\"$TRAVIS_BRANCH\"}' https://githooks.emotionloop.com/?k=$AUTH_KEY"
