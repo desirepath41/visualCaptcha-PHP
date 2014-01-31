@@ -6,7 +6,11 @@ PHP sample for visualCaptcha.
 
 ## Installation 
 
-You need PHP 5.3+ installed with [composer](https://getcomposer.org/doc/00-intro.md#downloading-the-composer-executable).
+You need PHP 5.3+ installed with [composer](https://getcomposer.org/doc/00-intro.md#downloading-the-composer-executable). Use next command for locally installed composer:
+```
+php composer.phar install
+```
+or next one for globally installed composer
 ```
 composer install
 ```
@@ -24,7 +28,7 @@ php -S localhost:8282 -t public
 
 Run next command to start mocha unit tests:
 ```
-npm test
+vendor/bin/phpunit
 ```
 
 
