@@ -1,4 +1,4 @@
-visualCaptcha-php
+visualCaptcha-php [![Build Status](https://travis-ci.org/emotionLoop/visualCaptcha-PHP.png?branch=master)](https://travis-ci.org/emotionLoop/visualCaptcha-PHP)
 ==================
 
 PHP sample for visualCaptcha.
