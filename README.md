@@ -26,7 +26,7 @@ php -S localhost:8282 -t public
 
 ## Run tests
 
-Run next command to start mocha unit tests:
+Run next command to start unit tests:
 ```
 vendor/bin/phpunit
 ```
