@@ -1,0 +1,132 @@
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	border: none;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	color: #333;
+}
+
+html,body {
+	width: 100%;
+	background: #2B2823;
+}
+
+#logo {
+	margin: 40px 0 20px 0;
+	display: block;
+	text-align: center;
+}
+
+#wrapper {
+	margin: 20px auto 50px;
+	width: 400px;
+	background: #FFF;
+	display: block;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	-moz-box-shadow: 0 0 5px #000;
+	-webkit-box-shadow: 0 0 5px #000;
+	box-shadow: 0 0 5px #000;
+}
+
+#wrapper  #header {
+	width: 100%;
+	display: block;
+	text-align: center;
+}
+
+#wrapper #content {
+	padding: 20px;
+	display: block;
+}
+
+#wrapper #content h3 {
+	padding: 0 10px 15px;
+	display: block;
+	font-weight: bold;
+	font-size: 1.2em;
+	color: #900;
+	text-align: center;
+}
+
+#wrapper #content h3.valid {
+    color: #090;
+}
+
+#wrapper #content form p {
+	margin: 10px 0 0 0;
+	font-size: .9em;
+}
+
+#wrapper #content form p small {
+	font-size: 11px;
+}
+
+#wrapper #content form p label {
+	font-weight: bold;
+	margin-right: 10px;
+}
+
+#wrapper #content form p input {
+	padding: 5px;
+	font-size: .9em;
+	border: 1px solid #CCC;
+}
+
+#wrapper #content form p.submit {
+	margin: 10px 0;
+	text-align: center;
+	clear: both;
+}
+
+#wrapper #content form p.submit button, #wrapper #content #check-is-filled {
+	text-align: center;
+	padding: 10px 20px;
+	border: none;
+	font-size: 1em;
+	font-weight: normal;
+	background: #333;
+	color: #FFF;
+	cursor: pointer;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	-moz-box-shadow: 0 0 3px #000;
+	-webkit-box-shadow: 0 0 3px #000;
+	box-shadow: 0 0 3px #000;
+}
+
+#wrapper #content form p.submit button:hover, #wrapper #content #check-is-filled:hover {
+	background: #000;
+}
+
+#wrapper #content #check-is-filled {
+    margin-top: 20px;
+    display: block;
+}
+
+#wrapper #footer {
+	margin: 0 10px;
+	padding: 10px 0;
+	display: block;
+	text-align: center;
+	font-size: .7em;
+	border-top: 1px dashed #CCC;
+}
+
+#wrapper #footer p {
+	color: #333;
+}
+
+#wrapper #footer p a {
+	color: #000;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#wrapper #footer p a:hover {
+	color: #666;
+}
