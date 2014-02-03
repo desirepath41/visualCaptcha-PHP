@@ -1,7 +1,9 @@
 visualCaptcha-php [![Build Status](https://travis-ci.org/emotionLoop/visualCaptcha-PHP.png?branch=master)](https://travis-ci.org/emotionLoop/visualCaptcha-PHP)
 ==================
 
-PHP sample for visualCaptcha.
+PHP sample for visualCaptcha. [You can also see it live](http://demo.visualcaptcha.net).
+
+A demo/sample PHP app that uses the [visualcaptcha composer/packagist package](https://github.com/emotionLoop/visualCaptcha-packagist) and the [visualcaptcha jQuery plugin bower package](https://github.com/emotionLoop/visualCaptcha-frontend-jquery), as a proof-of-concept for how to integrate it with your PHP project.
 
 
 ## Installation 
