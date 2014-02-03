@@ -3,8 +3,16 @@
 // Allow requests from all origins
 $app->response[ 'Access-Control-Allow-Origin' ] = '*';
 
-// Inject Session object into app
-$app->session = new \visualCaptcha\Session();
+// Inject Session closure into app
+$app->session = function() use( $app ) {
+    if ( $namespace = $app->request->params( 'namespace' ) ) {
+        $session = new \visualCaptcha\Session( 'visualcaptcha_' . $namespace );
+    } else {
+        $session = new \visualCaptcha\Session();
+    }
+
+    return $session;
+};
 
 // Demo
 // -----------------------------------------------------------------------------
@@ -60,32 +68,38 @@ $app->get( '/audio(/:type)', function( $type = 'mp3' ) use( $app ) {
 $app->post( '/try', function() use( $app ) {
     $captcha = new \visualCaptcha\Captcha( $app->session );
     $frontendData = $captcha->getFrontendData();
+    $params = Array();
+
+    // Load the namespace into url params, if set
+    if ( $namespace = $app->request->params( 'namespace' ) ) {
+        $params[] =  'namespace=' . $namespace;
+    }
 
     if ( ! $frontendData ) {
-        $redirectPath = '/?status=noCaptcha';
+        $params[] = 'status=noCaptcha';
     } else {
         // If an image field name was submitted, try to validate it
         if ( $imageAnswer = $app->request->params( $frontendData[ 'imageFieldName' ] ) ) {
             if ( $captcha->validateImage( $imageAnswer ) ) {
-                $redirectPath = '/?status=validImage';
+                $params[] = 'status=validImage';
             } else {
-                $redirectPath = '/?status=failedImage';
+                $params[] = 'status=failedImage';
             }
         } else if ( $audioAnswer = $app->request->params( $frontendData[ 'audioFieldName' ] ) ) {
             if ( $captcha->validateAudio( $audioAnswer ) ) {
-                $redirectPath = '/?status=validAudio';
+                $params[] = 'status=validAudio';
             } else {
-                $redirectPath = '/?status=failedAudio';
+                $params[] = 'status=failedAudio';
             }
         } else {
-            $redirectPath = '/?status=failedPost';
+            $params[] = 'status=failedPost';
         }
 
         $howMany = count( $captcha->getImageOptions() );
         $captcha->generate( $howMany );
     }
 
-    $app->redirect( $redirectPath );
+    $app->redirect( '/?' . join( '&', $params ) );
 } );
 
 // Error Handling
