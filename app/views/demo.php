@@ -57,8 +57,8 @@
                             <a href="/" target="_blank"><b>visualCaptcha</b></a> by <a href="http://emotionloop.com/" target="_blank"><b>emotionLoop</b></a>
                             <br />
                             View other demos:
-                            <a href="http://node.demo.visualcaptcha.net/"><strong>Node.js</strong></a> |
                             <a href="http://ruby.demo.visualcaptcha.net/"><strong>Ruby</strong></a> |
+                            <a href="http://node.demo.visualcaptcha.net/"><strong>Node.js</strong></a> |
                             <a href="http://meteor.demo.visualcaptcha.net/"><strong>Meteor</strong></a>
                             <br />
                             You can get it at <a href="https://github.com/emotionLoop/visualCaptcha" target="_blank"><b>GitHub</b></a>
