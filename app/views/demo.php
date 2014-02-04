@@ -24,9 +24,7 @@
         
         <!-- CSS -->
         <link href="css/demo.css" media="all" rel="stylesheet">
-
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+        <link href="http://emotionloop.github.io/visualCaptcha-frontend-core/dist/visualcaptcha.css" media="all" rel="stylesheet">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,40 +34,36 @@
         <![endif]-->
     </head>
     <body>
-        <div id="wrap">
-            <div class="container">
-                <div class="row"> 
-                    <a href="/" target="_blank" id="logo"><img src="img/logo.png" alt="visualCaptcha"></a>
-                    <div class="pre-captcha-wrapper">
-                        <div class="captcha-wrapper">
-                            <h1>Fill in the form and submit it</h1>
-                            <form name="frm-sample" id="frm-sample" action="/try" method="post">
-                                <input type="text" class="form-control" placeholder="Name">
-                                <div id="status-message"></div>
-                                <div id="sample-captcha"></div>
-                                <a id="check-is-filled">Check if visualCaptcha is filled</a>
-                                <button type="submit" name="submit-bt" class="submit">Submit form</button>
-                            </form>
-                        </div>
-                    </div> 
-                    <div class="col-xs-12 links">
-                        <p class="txt-center">
-                            <a href="/" target="_blank"><b>visualCaptcha</b></a> by <a href="http://emotionloop.com/" target="_blank"><b>emotionLoop</b></a>
-                            <br />
-                            View other demos:
-                            <a href="http://ruby.demo.visualcaptcha.net/"><strong>Ruby</strong></a> |
-                            <a href="http://node.demo.visualcaptcha.net/"><strong>Node.js</strong></a> |
-                            <a href="http://meteor.demo.visualcaptcha.net/"><strong>Meteor</strong></a>
-                            <br />
-                            You can get it at <a href="https://github.com/emotionLoop/visualCaptcha" target="_blank"><b>GitHub</b></a>
-                        </p>
-                    </div>
+        <div class="wrap">
+            <a href="/" target="_blank" class="logo"><img src="img/logo.png" alt="visualCaptcha"></a>
+            <div class="pre-captcha-wrapper">
+                <div class="captcha-wrapper">
+                    <h1>Fill in the form and submit it</h1>
+                    <form name="frm-sample" class="frm-sample" action="/try" method="post">
+                        <input type="text" class="form-control" placeholder="Name">
+                        <div id="status-message"></div>
+                        <div id="sample-captcha"></div>
+                        <a id="check-is-filled" class='info-btn'>Check if visualCaptcha is filled</a>
+                        <button type="submit" name="submit-bt" class="submit">Submit form</button>
+                    </form>
                 </div>
+            </div> 
+            <div class="links">
+                <p class="txt-center">
+                    <a href="/" target="_blank"><b>visualCaptcha</b></a> by <a href="http://emotionloop.com/" target="_blank"><b>emotionLoop</b></a>
+                    <br />
+                    View other demos:
+                    <a href="http://node.demo.visualcaptcha.net/"><strong>Node.js</strong></a> |
+                    <a href="http://ruby.demo.visualcaptcha.net/"><strong>Ruby</strong></a> |
+                    <a href="http://meteor.demo.visualcaptcha.net/"><strong>Meteor</strong></a>
+                    <br />
+                    You can get it at <a href="https://github.com/emotionLoop/visualCaptcha" target="_blank"><b>GitHub</b></a>
+                </p>
             </div>
         </div>
 
         <script src="/js/jquery.min.js"></script>
-        <script src="/js/visualcaptcha.jquery.js"></script>
+        <script src="http://emotionloop.github.io/visualCaptcha-frontend-core/dist/visualcaptcha.jquery.js"></script>
         <script src="/js/main.js"></script>
 
 	<script>
