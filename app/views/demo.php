@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>visualCaptcha - A cool visual drag-and-drop captcha jQuery plugin by emotionLoop - Demo</title>
+        <title>visualCaptcha PHP and jQuery Demo - The best captcha alternative</title>
         <meta charset="utf-8">
-        <meta name="keywords" content="visualcaptcha, visual, jquery captcha, captcha, mobile-friendly, better captcha, fancy captcha, captcha alternative, jquery, jquery ui, drag, draggable, demo, retina, accessibility">
+
+        <meta name="keywords" content="visualcaptcha, captcha, jquery, php, turing test, mobile-friendly, accessible, accessibility, retina-friendly, better captcha, fancy captcha, captcha alternative, demo">
         <meta name="description" content="A cool visual drag-and-drop captcha jQuery plugin. Mobile-friendly. Retina-ready. Accessible.">
         
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
