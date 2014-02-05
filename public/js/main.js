@@ -1,9 +1,8 @@
 ( function( window, $ ) {
     $( function() {
         var captchaEl = $( '#sample-captcha' ).visualCaptcha({
-            imgPath: '/img/',
+            imgPath: 'img/',
             captcha: {
-                url: window.location.origin,
                 numberOfImages: 5
             }
         } );

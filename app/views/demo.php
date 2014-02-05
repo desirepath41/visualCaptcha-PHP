@@ -40,7 +40,7 @@
             <div class="pre-captcha-wrapper">
                 <div class="captcha-wrapper">
                     <h1>Fill in the form and submit it</h1>
-                    <form name="frm-sample" class="frm-sample" action="/try" method="post">
+                    <form name="frm-sample" class="frm-sample" action="try" method="post">
                         <input type="text" class="form-control" placeholder="Name">
                         <div id="status-message"></div>
                         <div id="sample-captcha"></div>
@@ -54,6 +54,7 @@
                     <a href="/" target="_blank"><b>visualCaptcha</b></a> by <a href="http://emotionloop.com/" target="_blank"><b>emotionLoop</b></a>
                     <br />
                     View other demos:
+                    <br />
                     <a href="http://node.demo.visualcaptcha.net/"><strong>Node.js</strong></a> |
                     <a href="http://ruby.demo.visualcaptcha.net/"><strong>Ruby</strong></a> |
                     <a href="http://meteor.demo.visualcaptcha.net/"><strong>Meteor</strong></a> |
@@ -64,9 +65,9 @@
             </div>
         </div>
 
-        <script src="/js/jquery.min.js"></script>
+        <script src="js/jquery.min.js"></script>
         <script src="http://emotionloop.github.io/visualCaptcha-frontend-core/dist/visualcaptcha.jquery.js"></script>
-        <script src="/js/main.js"></script>
+        <script src="js/main.js"></script>
 
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
