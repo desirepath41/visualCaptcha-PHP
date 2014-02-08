@@ -80,7 +80,7 @@ Parameters:
 
 ### POST `/try` 
 
-Thi is just a sample route, where we post the form to, and where the visualCaptcha validation takes place.
+This is just a sample route, where we post the form to, and where the visualCaptcha validation takes place.
 
 
 ## License
