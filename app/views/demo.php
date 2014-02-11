@@ -5,7 +5,7 @@
         <meta charset="utf-8">
 
         <meta name="keywords" content="visualcaptcha, captcha, jquery, php, turing test, mobile-friendly, accessible, accessibility, retina-friendly, better captcha, fancy captcha, captcha alternative, demo">
-        <meta name="description" content="A cool visual drag-and-drop captcha jQuery plugin. Mobile-friendly. Retina-ready. Accessible.">
+        <meta name="description" content="A cool visual captcha jQuery plugin. Mobile-friendly. Retina-ready. Accessible.">
         
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
