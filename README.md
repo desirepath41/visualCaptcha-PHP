@@ -1,5 +1,8 @@
-visualCaptcha-PHP [![Build Status](https://travis-ci.org/emotionLoop/visualCaptcha-PHP.png?branch=master)](https://travis-ci.org/emotionLoop/visualCaptcha-PHP)
-==================
+[![Build Status](https://travis-ci.org/emotionLoop/visualCaptcha-PHP.svg?branch=master)](https://travis-ci.org/emotionLoop/visualCaptcha-PHP)
+[![Codacy](https://www.codacy.com/project/badge/07b7a5b48c2044a0984d458c7b82b35a)](https://www.codacy.com/app/bruno-bernardino/visualCaptcha-PHP)
+[![Code Climate](https://codeclimate.com/github/emotionLoop/visualCaptcha-ruby/badges/gpa.svg)](https://codeclimate.com/github/emotionLoop/visualCaptcha-ruby)
+
+# visualCaptcha-PHP
 
 PHP sample for visualCaptcha. [You can also see it live](http://demo.visualcaptcha.net).
 
