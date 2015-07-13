@@ -3,15 +3,28 @@
         var captchaEl = $( '#sample-captcha' ).visualCaptcha({
             imgPath: 'img/',
             captcha: {
-                numberOfImages: 5
+                numberOfImages: 5,
+                callbacks: {
+                    loaded: function( captcha ) {
+                        // Avoid adding the hashtag to the URL when clicking/selecting visualCaptcha options
+                        var anchorOptions = document.getElementById( 'sample-captcha' ).getElementsByTagName( 'a' );
+                        var anchorList = Array.prototype.slice.call( anchorOptions );// .getElementsByTagName does not return an actual array
+                        anchorList.forEach( function( anchorItem ) {
+                            _bindClick( anchorItem, function( event ) {
+                                event.preventDefault();
+                            });
+                        });
+                    }
+                }
+
             }
         } );
         var captcha = captchaEl.data( 'captcha' );
 
-
-
         // Show an alert saying if visualCaptcha is filled or not
-        var _sayIsVisualCaptchaFilled = function() {
+        var _sayIsVisualCaptchaFilled = function( event ) {
+            event.preventDefault();
+
             if ( captcha.getCaptchaData().valid ) {
                 window.alert( 'visualCaptcha is filled!' );
             } else {
@@ -35,8 +48,8 @@
         } else if ( queryString.indexOf('status=failedPost') !== -1 ) {
             statusEl.html('<div class="status"> <div class="icon-no"></div> <p>No visualCaptcha answer was given!</p> </div>');
         }
-        
+
         // Bind that function to the appropriate link
-        $( '#check-is-filled' ).click( _sayIsVisualCaptchaFilled );
+        $( '#check-is-filled' ).on( 'click.app', _sayIsVisualCaptchaFilled );
     } );
 }( window, jQuery ) );
