@@ -56,7 +56,8 @@
                     View other demos:
                     <br />
                     <a href="http://node.demo.visualcaptcha.net/"><strong>Node.js</strong></a> |
-                    <a href="http://ruby.demo.visualcaptcha.net/"><strong>Ruby</strong></a> |
+                    <a href="https://github.com/emotionLoop/visualCaptcha-ruby"><strong>Ruby</strong></a> |
+                    <a href="https://github.com/emotionLoop/visualCaptcha-django"><strong>Django</strong></a> |
                     <a href="http://multiple.demo.visualcaptcha.net/"><strong>Multiple</strong></a>
                     <br />
                     You can get it (and more languages) at <a href="https://github.com/emotionLoop/visualCaptcha" target="_blank"><b>GitHub</b></a>
