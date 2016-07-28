@@ -4,7 +4,7 @@
 
 # visualCaptcha-PHP
 
-PHP sample for visualCaptcha. [You can also see it live](http://demo.visualcaptcha.net).
+PHP sample for visualCaptcha.
 
 This is a demo/sample PHP app that uses the [visualCaptcha PHP composer/packagist package](https://github.com/emotionLoop/visualCaptcha-packagist) and the [visualCaptcha jQuery plugin bower package](https://github.com/emotionLoop/visualCaptcha-frontend-jquery), as a proof-of-concept for how to integrate it with your PHP project.
 
