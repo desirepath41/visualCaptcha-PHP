@@ -48,6 +48,9 @@ If you need to run Unit tests, just use the following command:
 vendor/bin/phpunit
 ```
 
+## Issues installing composer and/or dependencies
+You can get a ZIP with all dependencies already installed (just run a webserver and go inside the `public` folder). [Download it here](https://github.com/emotionLoop/visualCaptcha-PHP/raw/master/visualCaptcha-PHP.zip).
+
 
 ## API
 
