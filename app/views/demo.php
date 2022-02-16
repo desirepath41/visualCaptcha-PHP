@@ -25,7 +25,7 @@
         
         <!-- CSS -->
         <link href="css/demo.css" media="all" rel="stylesheet">
-        <link href="http://emotionloop.github.io/visualCaptcha-frontend-core/dist/visualcaptcha.css" media="all" rel="stylesheet">
+        <link href="css/visualcaptcha.css" media="all" rel="stylesheet">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -66,7 +66,7 @@
         </div>
 
         <script src="js/jquery.min.js"></script>
-        <script src="http://emotionloop.github.io/visualCaptcha-frontend-core/dist/visualcaptcha.jquery.js"></script>
+        <script src="js/visualcaptcha.jquery.js"></script>
         <script src="js/main.js"></script>
 
 	<script>

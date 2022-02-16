@@ -1,23 +1,6 @@
 {
-    "private": true,
-    "version": "0.0.1",
-    "name": "emotionLoop/visualCaptcha-php-demo",
-    "description": "visualCaptcha PHP Demo",
-    "keywords": ["captcha", "visualCaptcha", "security", "api", "demo"],
-    "homepage": "http://visualcaptcha.net",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "emotionLoop",
-            "email": "hello@emotionloop.com",
-            "role": "Developer"
-        }
-    ],
     "require": {
         "slim/slim": "2.*",
-        "emotionloop/visualcaptcha": "dev-master"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "*"
+        "emotionloop/visualcaptcha": "^0.0.8"
     }
 }
